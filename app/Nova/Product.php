@@ -18,11 +18,14 @@ class Product extends Resource
     public static $model = \App\Models\Product::class;
 
     /**
-     * The single value that should be used to represent the resource when being displayed.
+     * Get the value that should be displayed to represent the resource.
      *
-     * @var string
+     * @return string
      */
-    public static $title = 'name';
+    public function title()
+    {
+        return "merchant_id: {$this->merchant_id} product name: {$this->name}";
+    }
 
     /**
      * The columns that should be searched.

@@ -19,8 +19,10 @@ class IngredientProductFactory extends Factory
     public function definition()
     {
         $product = Product::all()->random();
+        static $order = 1;
+
         return [
-            'ingredient_id' => Ingredient::all()->random(),
+            'ingredient_id' => $order++,
             'product_id' => $product->id,
             'merchant_id' => $product->merchant_id,
         ];

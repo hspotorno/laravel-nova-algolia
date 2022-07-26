@@ -44,7 +44,7 @@ class Ingredient extends Resource
         return [
             ID::make()->sortable(),
             Text::make("Name"),
-            BelongsToMany::make("Products"),
+            BelongsToMany::make("Products")->searchable(),
         ];
     }
 
